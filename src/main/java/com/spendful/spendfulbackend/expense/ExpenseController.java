@@ -13,18 +13,13 @@ import java.util.List;
 @RequestMapping(path = "api/v1/expenses")
 public class ExpenseController {
 
+    private final ExpenseService expenseService;
+
+    public ExpenseController(ExpenseService expenseService) {
+        this.expenseService = expenseService;
+    }
     @GetMapping
     public List<Expense> getAllExpenses() {
-        return List.of(
-                new Expense(
-                        1L,
-                        24.97,
-                        LocalDate.of(2023, Month.FEBRUARY, 9),
-                        "Walmart",
-                        "Groceries",
-                        "Visa",
-                        "First entry"
-                )
-        );
+        return expenseService.getAllExpenses();
     }
 }
