@@ -93,4 +93,17 @@ public class Expense {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    @Override
+    public String toString() {
+        return "Expense{" +
+                "id=" + id +
+                ", amount=" + amount +
+                ", expenseDate=" + expenseDate +
+                ", merchant='" + merchant + '\'' +
+                ", budgetCategory='" + budgetCategory + '\'' +
+                ", paymentMethod='" + paymentMethod + '\'' +
+                ", description='" + description + '\'' +
+                '}';
+    }
 }
