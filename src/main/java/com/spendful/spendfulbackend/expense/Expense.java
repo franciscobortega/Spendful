@@ -1,9 +1,14 @@
 package com.spendful.spendfulbackend.expense;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import java.time.LocalDate;
 
+@Document(collection = "expenses")
 public class Expense {
 
+    @Id
     private Long id;
     private double amount;
     private LocalDate expenseDate;
