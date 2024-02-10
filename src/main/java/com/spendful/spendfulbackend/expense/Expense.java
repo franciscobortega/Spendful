@@ -4,14 +4,15 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDate;
+import java.util.Date;
 
-@Document(collection = "expenses")
+@Document("spendful")
 public class Expense {
 
     @Id
-    private Long id;
+    private String id;
     private double amount;
-    private LocalDate expenseDate;
+    private Date expenseDate;
     private String merchant;
     private String budgetCategory;
     private String paymentMethod;
@@ -22,7 +23,7 @@ public class Expense {
     public Expense() {
     }
 
-    public Expense(Long id, double amount, LocalDate expenseDate, String merchant, String budgetCategory, String paymentMethod, String description) {
+    public Expense(String id, double amount, Date expenseDate, String merchant, String budgetCategory, String paymentMethod, String description) {
         this.id = id;
         this.amount = amount;
         this.expenseDate = expenseDate;
@@ -32,7 +33,7 @@ public class Expense {
         this.description = description;
     }
 
-    public Expense(double amount, LocalDate expenseDate, String merchant, String budgetCategory, String paymentMethod, String description) {
+    public Expense(double amount, Date expenseDate, String merchant, String budgetCategory, String paymentMethod, String description) {
         this.amount = amount;
         this.expenseDate = expenseDate;
         this.merchant = merchant;
@@ -43,11 +44,11 @@ public class Expense {
 
     // Getters and Setters
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -59,11 +60,11 @@ public class Expense {
         this.amount = amount;
     }
 
-    public LocalDate getExpenseDate() {
+    public Date getExpenseDate() {
         return expenseDate;
     }
 
-    public void setExpenseDate(LocalDate expenseDate) {
+    public void setExpenseDate(Date expenseDate) {
         this.expenseDate = expenseDate;
     }
 
