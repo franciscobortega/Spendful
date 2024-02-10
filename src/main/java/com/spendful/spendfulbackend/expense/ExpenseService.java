@@ -1,9 +1,12 @@
 package com.spendful.spendfulbackend.expense;
 
+import org.springframework.stereotype.Service;
+
 import java.time.LocalDate;
 import java.time.Month;
 import java.util.List;
 
+@Service
 public class ExpenseService {
 
     public List<Expense> getAllExpenses() {
