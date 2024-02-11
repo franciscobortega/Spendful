@@ -2,9 +2,7 @@ package com.spendful.spendfulbackend.expense;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -22,5 +20,10 @@ public class ExpenseController {
     @GetMapping
     public List<Expense> getAllExpenses() {
         return expenseService.getAllExpenses();
+    }
+
+    @PostMapping
+    public Expense createExpense(@RequestBody Expense expense){
+        return expenseService.saveExpense(expense);
     }
 }

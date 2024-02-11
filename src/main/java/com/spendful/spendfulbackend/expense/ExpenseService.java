@@ -20,4 +20,8 @@ public class ExpenseService {
         System.out.println("Retrieved expenses: " + expenses);
         return expenses;
     }
+
+    public Expense saveExpense(Expense expense) {
+        return expenseRepository.save(expense);
+    }
 }
