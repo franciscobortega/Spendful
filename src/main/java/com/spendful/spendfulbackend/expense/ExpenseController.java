@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping(path = "api/v1/expenses")
+@RequestMapping("/api")
 public class ExpenseController {
 
     private final ExpenseService expenseService;
@@ -17,9 +17,14 @@ public class ExpenseController {
         this.expenseService = expenseService;
     }
 
-    @GetMapping
+    @GetMapping("/v1/expenses")
     public List<Expense> getAllExpenses() {
         return expenseService.getAllExpenses();
+    }
+
+    @GetMapping("/hello")
+    public String helloWorld() {
+        return "Hello World!";
     }
 
     @PostMapping
